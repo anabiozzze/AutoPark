@@ -1,7 +1,6 @@
 package app.models;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "autos")
@@ -11,7 +10,7 @@ public class Auto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String model;
-    @Column(name = "license plate")
+    @Column(name = "license_plate")
     private int plate;
     private String color;
 
@@ -52,19 +51,12 @@ public class Auto {
         this.color = color;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Auto)) return false;
-        Auto auto = (Auto) o;
-        return plate == auto.plate &&
-                Objects.equals(model, auto.model) &&
-                Objects.equals(color, auto.color);
+    public User getUser() {
+        return user;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(model, plate, color);
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

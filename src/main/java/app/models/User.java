@@ -1,8 +1,8 @@
 package app.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table (name = "users")
@@ -16,7 +16,7 @@ public class User {
     private int age;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Auto> autos;
+    private List<Auto> autos = new ArrayList<Auto>();
 
     public User() {
     }
@@ -42,18 +42,16 @@ public class User {
         this.age = age;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return age == user.age &&
-                Objects.equals(name, user.name);
+    public List<Auto> getAutos() {
+        return autos;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, age);
+    public void setAutos(List<Auto> autos) {
+        this.autos = autos;
+    }
+
+    public void setAuto(Auto auto) {
+        autos.add(auto);
     }
 
     @Override

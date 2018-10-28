@@ -89,8 +89,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-10-21.21:21:57.847</IntrospectionTimestamp>
-      <IntrospectionStateNumber>566</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-10-28.21:45:43.899</IntrospectionTimestamp>
+      <IntrospectionStateNumber>577</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -198,11 +198,11 @@
       <StateNumber>564</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="32" parent="26" name="license plate">
+    <column id="32" parent="26" name="license_plate">
       <Position>5</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>564</StateNumber>
+      <StateNumber>577</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="33" parent="26" name="autos_id_uindex">
